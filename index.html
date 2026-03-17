@@ -1,62 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
-<body style="background-color: #000000;">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Francisco Palazzo</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; color: #ffffff; }
-        header { text-align: center; padding: 50px 0; background-color: #000000; border-radius: 8px; }
-        section { max-width: 800px; margin: 30px auto; }
-        a { color: #ffffff; text-decoration: none; font-weight: bold; }
-        .proyecto { border: 1px solid #ffffff; padding: 15px; border-radius: 5px; margin-bottom: 15px; }
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            background-color: #131313; 
+            font-family: 'Inter', sans-serif; 
+            color: #ffffff; 
+        }
+    
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    
+        .contenedor-scroll { 
+            height: 100vh; 
+            overflow-y: scroll; 
+            scroll-snap-type: y mandatory; 
+        }
+    
+        .seccion-snap { 
+            height: 100vh; 
+            scroll-snap-align: start; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 20px; 
+            box-sizing: border-box; 
+        }
+    
+        .contenido { max-width: 800px; width: 100%; }
+        
+        a { color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 10px; }
+        
+        .proyecto { border: 1px solid #ffffff; padding: 15px; border-radius: 5px; margin-top: 15px; }
+        
+        button { padding: 10px 15px; cursor: pointer; margin-top: 15px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        
+        #opciones-cv { 
+            display: none; 
+            position: absolute; 
+            margin-top: 5px; 
+            background: #f9f9f9; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            border-radius: 5px; 
+            transform: translateX(-50%); 
+            left: 50%; 
+        }
+        
+        #opciones-cv a { display: block; margin: 5px 0; color: #000000; font-weight: 400; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Francisco Palazzo</h1>
-        <p>Analista en Informática | Jr full stack developer</p>
-    </header>
+    <div class="contenedor-scroll">
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Busco mi primera experiencia profesional. Me especializo en crear soluciones prácticas, eficientes y aplicar lógica analítica al desarrollo.</p>
-    </section>
+        <header class="seccion-snap">
+            <div class="contenido">
+                <h1>Francisco Palazzo</h1>
+                <p>Analista en Informática | Jr full stack developer</p>
+            </div>
+        </header>
 
-    <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
-        
-        <div class="proyecto">
-            <h3>Sistema de Gestión de Stock</h3>
-            <p>Aplicación desarrollada para administrar inventarios de manera eficiente.</p>
-            <a href="https://github.com/palazzofran/stock.app">Ver código en GitHub</a>
-        </div>
-        
-    </section>
+        <section id="sobre-mi" class="seccion-snap">
+            <div class="contenido">
+                <h2>Sobre mí</h2>
+                <p>Busco mi primera experiencia profesional. Me especializo en crear soluciones prácticas, eficientes y aplicar lógica analítica al desarrollo.</p>
+            </div>
+        </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>
-            <a href="https://www.linkedin.com/in/fran-palazzodev/">LinkedIn</a>
-            <a href="https://github.com/palazzofran">GitHub</a>
-        </p>
-        <div style="position: relative; display: inline-block;">
-            <button onclick="toggleCV()" style="padding: 10px 15px; cursor: pointer;">Descargar CV</button>
-            
-            <div id="opciones-cv" style="display: none; position: absolute; margin-top: 5px; background: #f9f9f9; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
-                <a href="assets/CV_Francisco_Palazzo.pdf" download="CV_Francisco_Palazzo.pdf" style="display: block; margin-bottom: 8px; color: #000000;">Español</a> 
-                <a href="assets/CV_Francisco_Palazzo_en.pdf" download="CV_Francisco_Palazzo_en.pdf" style="display: block; color: #000000;">English</a> </div>
-        </div>
-        
-        <script>
-            function toggleCV() {
-                let menu = document.getElementById("opciones-cv");
-                menu.style.display = menu.style.display === "none" ? "block" : "none";
-            }
-        </script>
-    </section>
+        <section id="proyectos" class="seccion-snap">
+            <div class="contenido">
+                <h2>Proyectos Destacados</h2>
+                <div class="proyecto">
+                    <h3>Sistema de Gestión de Stock</h3>
+                    <p>Aplicación desarrollada para administrar inventarios de manera eficiente.</p>
+                    <a href="https://github.com/palazzofran/stock.app" target="_blank">Ver código en GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion-snap">
+            <div class="contenido">
+                <h2>Contacto</h2>
+                <p>
+                    <a href="https://www.linkedin.com/in/fran-palazzodev/" target="_blank">
+                        <img src="assets/linkedin.png" alt="LinkedIn" style="width: 30px; height: 30px;">
+                    </a>
+                    <a href="https://github.com/palazzofran" target="_blank">
+                        <img src="assets/github.png" alt="GitHub" style="width: 30px; height: 30px;">
+                    </a>
+                </p>
+                
+                <div style="position: relative; display: inline-block;">
+                    <button onclick="toggleCV()">Descargar CV</button>
+                    <div id="opciones-cv">
+                        <a href="assets/CV_Francisco_Palazzo.pdf" download="CV_Francisco_Palazzo.pdf">Español</a> 
+                        <a href="assets/CV_Francisco_Palazzo_en.pdf" download="CV_Francisco_Palazzo_en.pdf">English</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function toggleCV() {
+            let menu = document.getElementById("opciones-cv");
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+    </script>
 
 </body>
 </html>

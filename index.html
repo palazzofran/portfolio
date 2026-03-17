@@ -38,10 +38,23 @@
     <section id="contacto">
         <h2>Contacto</h2>
         <p>
-            <a href="https://www.linkedin.com/in/fran-palazzodev/">LinkedIn</a> | 
-            <a href="https://github.com/palazzofran">GitHub</a> | 
-            <a href="file:///C:/Users/franb/OneDrive/Documentos/CV_Francisco_Palazzo.pdf" target="_blank">Descargar CV</a>
+            <a href="https://www.linkedin.com/in/fran-palazzodev/">LinkedIn</a>
+            <a href="https://github.com/palazzofran">GitHub</a>
         </p>
+        <div style="position: relative; display: inline-block;">
+            <button onclick="toggleCV()" style="padding: 10px 15px; cursor: pointer;">Descargar CV</button>
+            
+            <div id="opciones-cv" style="display: none; position: absolute; margin-top: 5px; background: #f9f9f9; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                <a href="assets/CV_Francisco_Palazzo.pdf" download="CV_Francisco_Palazzo.pdf" style="display: block; margin-bottom: 8px;">Español</a> 
+                <a href="assets/CV_Francisco_Palazzo_en.pdf" download="CV_Francisco_Palazzo_en.pdf" style="display: block;">English</a> </div>
+        </div>
+        
+        <script>
+            function toggleCV() {
+                let menu = document.getElementById("opciones-cv");
+                menu.style.display = menu.style.display === "none" ? "block" : "none";
+            }
+        </script>
     </section>
 
 </body>
